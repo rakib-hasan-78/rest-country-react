@@ -15,7 +15,7 @@
         @apply w-full h-auto flex flex-col items-center justify-center;
     }
     h1{
-        @apply xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xm:text-xl xxm:text-lg font-extrabold text-blue-200/70 text-center uppercase;
+        @apply xl:text-5xl lg:text-4xl md:text-3xl sm:text-xl xm:text-lg xxm:text-base font-extrabold text-blue-200/70 text-center uppercase;
     }
     h2{
         @apply xl:text-4xl lg:text-3xl md:text-xl sm:text-lg xm:text-base xxm:text-base font-bold text-center text-blue-300;
@@ -24,7 +24,7 @@
         @apply xl:text-xl lg:text-xl md:text-lg sm:text-base xm:text-base xxm:text-base text-center font-semibold text-blue-200/75;
     }
     p{
-        @apply xl:text-lg lg:text-lg md:text-base sm:text-sm xm:text-xs xxm:text-xs text-blue-100 font-medium;
+        @apply xl:text-lg lg:text-lg md:text-base sm:text-sm xm:text-xs xxm:text-xs text-blue-50 font-medium;
     }
     span{
         @apply text-blue-300 xl:text-base lg:text-base md:text-base sm:text-sm xm:text-xs xxm:text-xs font-normal;
@@ -33,10 +33,10 @@
 
 @layer components{
     .btn-bg-light{
-        @apply bg-gradient-to-r from-sky-600 via-indigo-600 to-blue-700;
+        @apply bg-gradient-to-r from-violet-600 via-indigo-700 to-blue-700 bg-blend-exclusion;
     }
     .bg-light-hover{
-        @apply from-sky-700 via-indigo-500 to-blue-600;
+        @apply from-violet-800 via-indigo-800 to-blue-700 bg-blend-color;
     }
     .btn-secondary-gradient{
         @apply bg-gradient-to-r from-rose-500 via-pink-600 to-red-500;
@@ -45,6 +45,18 @@
         @apply bg-gradient-to-r from-rose-700 via-pink-700 to-red-700/70;
     }
 
+    /* glass morphine section */
+    .glass-section {
+        @apply bg-gradient-to-r from-indigo-500 via-blue-500 to-sky-400 
+               backdrop-blur-xl bg-white/10 border border-white/30 
+               shadow-xl rounded-xl p-6 my-5 
+               mix-blend-overlay;
+    }
+    
+    .input-gradient {
+        @apply bg-gradient-to-r from-cyan-900 via-teal-800 to-blue-700 bg-blend-multiply;
+    }
+    
 }
 
 @layer utilities{
@@ -57,5 +69,7 @@
     .btn-secondary{
         @apply btn-secondary-gradient border-red-400/20 shadow-md text-pink-100 hover:btn-secondary-gradient-hover;
     }
-    
+    .input-primary{
+        @apply py-2 outline-none rounded-md border-none px-2 shadow-lg capitalize inset-2 w-full placeholder:xl:text-lg placeholder:lg:text-base placeholder:md:text-base placeholder:sm:text-sm placeholder:xm:text-sm placeholder:xxm:text-xs;
+    }
 }

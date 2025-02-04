@@ -1,6 +1,7 @@
 
 /* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee,  faUser, faEnvelope  } from "@fortawesome/free-solid-svg-icons"; */
+import { } from "@fortawesome/free-solid-svg-icons"; */
+import Base from './components/Base';
 
 
 
@@ -8,8 +9,7 @@ function App() {
   
   return (
     <>
-
-
+    <Base />
     </>
   )
 }
