@@ -56,6 +56,10 @@
     .input-gradient {
         @apply bg-gradient-to-r from-cyan-900 via-teal-800 to-blue-700 bg-blend-multiply;
     }
+
+    .sub-section{
+        @apply xxm:w-full lg:w-3/12 flex flex-col items-center justify-center gap-y-3 py-2 border pb-5 rounded-md shadow-xl;
+    }
     
 }
 
