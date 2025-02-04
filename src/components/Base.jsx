@@ -1,14 +1,11 @@
 import React from 'react';
 import Header from './Header';
-import Search from './Search';
-import Sort from './Sort';
-
+import Countries from './Countries';
 const Base = () => {
     return (
         <section>
         <Header />
-        <Sort />
-        <Search />
+        <Countries />
         </section>
     );
 };

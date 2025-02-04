@@ -27,7 +27,7 @@
         @apply xl:text-lg lg:text-lg md:text-base sm:text-sm xm:text-xs xxm:text-xs text-blue-50 font-medium;
     }
     span{
-        @apply text-blue-300 xl:text-base lg:text-base md:text-base sm:text-sm xm:text-xs xxm:text-xs font-normal;
+        @apply text-blue-300 xl:text-base lg:text-base md:text-base sm:text-sm xm:text-xs xxm:text-xs;
     }
 }
 
@@ -60,12 +60,21 @@
     .sub-section{
         @apply xxm:w-full lg:w-3/12 flex flex-col items-center justify-center gap-y-3 py-2 border pb-5 rounded-md shadow-xl;
     }
-    
+
+    /* glass card */
+    .glass-card {
+        @apply xxm:w-full sm:w-5/12 lg:w-3/12 flex flex-col items-center justify-center  
+        bg-gradient-to-l from-neutral-500/50 from-60% via-gray-600/80 via-90% to-zinc-400/80 rounded-lg shadow-md backdrop-blur backdrop-brightness-90 bg-opacity-65 border border-blue-50 inset-0
+    }
+      
 }
 
 @layer utilities{
     .btn{
         @apply px-6 py-2 rounded-md font-semibold uppercase border transition-all outline-none duration-300;
+    }
+    .btn-card{
+        @apply rounded-md font-semibold uppercase border transition-all outline-none duration-300;
     }
     .btn-primary{
         @apply  btn-bg-light text-indigo-200  border-indigo-400 hover:bg-light-hover;
