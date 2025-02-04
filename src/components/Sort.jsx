@@ -12,7 +12,7 @@ const Sort = () => {
                     <Title tag={`2`} text={`sort the countries`} />
                 </div>
                 <div className='w-full flex items-center justify-center flex-wrap xxm:flex-col lg:flex-row xxm:gap-y-5 lg:gap-y-0 lg:gap-x-8'>
-                    <div className='sub-section'>
+                    <div className='sub-section bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-xl'>
                         <Title tag={`3`} text={`search by continents`} />
                         <select className='capitalize w-10/12 rounded-md py-3 outline-none xxm:text-xs sm:text-sm md:text-base lg:text-lg' name="select" id="select">
                             <option value="#">select continents</option>
@@ -25,7 +25,7 @@ const Sort = () => {
                         </select>
                         <Button text={`search`} className={`w-10/12 btn btn-secondary `} />
                     </div>
-                    <div className='sub-section'>
+                    <div className='sub-section bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-xl'>
                         <Title tag={`3`} text={`search by capital`} />
                         <div className='w-full flex items-center justify-center relative'>
                         <input type="text" className='w-10/12 rounded-md outline-none border-none px-2 py-2 xxm:text-xs sm:text-sm md:text-base lg:text-lg' placeholder='search by capital' />
@@ -33,7 +33,7 @@ const Sort = () => {
                         </div>
                         <Button text={`search`} className={`w-10/12 btn btn-secondary `} />
                     </div>
-                    <div className='sub-section'>
+                    <div className='sub-section bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-xl'>
                     <Title tag={`3`} text={`search by continents`} />
                         <select className='capitalize w-10/12 rounded-md py-3 outline-none xxm:text-xs sm:text-sm md:text-base lg:text-lg' name="select" id="select">
                             <option value="#">country status</option>
