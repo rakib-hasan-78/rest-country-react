@@ -66,7 +66,21 @@
         @apply xxm:w-full sm:w-5/12 lg:w-3/12 flex flex-col items-center justify-center  
         bg-gradient-to-l from-neutral-500/50 from-60% via-gray-600/80 via-90% to-zinc-400/80 rounded-lg shadow-md backdrop-blur backdrop-brightness-90 bg-opacity-65 border border-blue-50 inset-0
     }
-      
+    /* MODAL GLASS */
+    .modal-glass{
+        @apply w-10/12 bg-gradient-to-r from-pink-600/30
+        from-10% via-fuchsia-600/80 via-50%
+         to-rose-800/45 to-90%
+          backdrop-blur-sm 
+          bg-opacity-85 
+          shadow-xl 
+          border 
+          border-white/50
+           rounded-lg backdrop-brightness-90 backdrop-opacity-90 backdrop-contrast-125  p-2 mx-auto fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40;
+        }
+        .basic-modal-body{
+            @apply w-full flex items-center justify-center;
+        }  
 }
 
 @layer utilities{

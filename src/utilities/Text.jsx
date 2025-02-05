@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Text = ({tag, text, className}) => {
+const Text = ({tag, text, className, onClick}) => {
     const TAG = `${tag}`
     return (
-        <TAG className={`${className}`}>
+        <TAG className={`${className}`} onClick={onClick}>
             {text}
         </TAG>
     );

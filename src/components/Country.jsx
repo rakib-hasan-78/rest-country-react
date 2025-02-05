@@ -3,7 +3,7 @@ import Text from './../utilities/Text';
 import Title from './../utilities/Title';
 import Button from './../utilities/Button';
 
-const Country = ({country, index}) => {
+const Country = ({country, index, onTarget}) => {
     const {
         name: {common},
         cca3,
@@ -27,6 +27,7 @@ const Country = ({country, index}) => {
             </div>
             <div className='w-full flex justify-center items-center mb-3'>
                 <Button className={`btn-card btn-primary text-base px-6 py-2 w-10/12`}
+                onAction={onTarget}
                     text={`search`}
                 />
             </div>
