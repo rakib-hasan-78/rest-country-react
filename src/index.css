@@ -80,6 +80,9 @@
         }
         .basic-modal-body{
             @apply w-full flex items-center justify-center;
+        }
+        .card-row-sided-info{
+            @apply w-full flex items-center justify-start space-x-5;
         }  
 }
 
