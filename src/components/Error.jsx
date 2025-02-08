@@ -12,7 +12,7 @@ const Error = ({searchCountry, type, }) => {
                 src={notFoundImage} alt="bad-search-image"/>
                 <div className='w-full flex flex-col items-center justify-center space-y-2  absolute top-[50%] z-50'>
                     <Title tag={2} text={`bad search request - 404 !`} className={`font-black text-rose-600  uppercase`} />
-                    <Text tag={`p`} text={`sorry  !! your searched ${type}  isn't found. `}/>
+                    <Text tag={`p`} text={`sorry  !! your searched ${type}  ${searchCountry}  isn't found. `}/>
                     <Text tag={`span`} text={`please search again`} className={`text-white font-extrabold`} />
                 </div>
             </div>

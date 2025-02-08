@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Country from './Country';
 import CountryMod from './CountryMod';
 import Search from './Search';
+import Error from './Error';
+import Sort from './Sort';
 
 
 const Countries = () => {
@@ -48,8 +50,11 @@ const Countries = () => {
         }
     }
 
+    // 
+
     return (
         <>
+        <Sort country={filterData} />
         <Search searchData={searchData} setSearchData={setSearchData} cancelHandler={cancelHandler}  searchHandler={filterCountryHandler} />
         <section>
             <div className='bg-blue-800/30 rounded-md bg-opacity-40 inset-0 shadow-lg border border-white/30 w-10/12 flex items-center justify-center flex-wrap flex-col md:flex-row gap-8 py-10'>
@@ -61,7 +66,7 @@ const Countries = () => {
                  /> )}
                  {
                     filterData.length===0 && (
-                        <span></span>
+                        <Error searchCountry={searchData} type={`country`} />
                     )
                  }
             </div>

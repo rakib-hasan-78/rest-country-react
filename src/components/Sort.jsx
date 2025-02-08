@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import Title from './../utilities/Title';
 import Button from './../utilities/Button';
 
-const Sort = () => {
+const Sort = ({country}) => {
+    const [searchCity, setSearchCity] = useState('');
+
     return (
         <section>
             <div className='w-10/12 glass-section'>
@@ -28,10 +30,28 @@ const Sort = () => {
                     <div className='sub-section bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-xl'>
                         <Title tag={`3`} text={`search by capital`} />
                         <div className='w-full flex items-center justify-center relative'>
-                        <input type="text" className='w-10/12 rounded-md outline-none border-none px-2 py-2 xxm:text-xs sm:text-sm md:text-base lg:text-lg' placeholder='search by capital' />
-                        <span className='absolute top-1/2 right-5 translate-y-[-50%] cursor-pointer text-black text-xs px-2'> <FontAwesomeIcon icon={faX}/> </span>
+                        <input
+                        value={searchCity}
+                        onChange={(e)=>setSearchCity(e.target.value)} 
+                        type="text" 
+                        className='w-10/12 rounded-md outline-none border-none px-2 py-2 xxm:text-xs sm:text-sm md:text-base lg:text-lg' 
+                        placeholder='search by capital' />
+                        {
+                            searchCity && (
+
+                                <span className='absolute top-1/2 right-5 translate-y-[-50%] cursor-pointer text-black text-xs px-2'> <FontAwesomeIcon icon={faX}/> </span>
+                            )
+
+                        }
                         </div>
-                        <Button text={`search`} className={`w-10/12 btn btn-secondary `} />
+                        {
+                            searchCity && (
+                                
+                                <Button text={`search`} className={`w-10/12 btn btn-secondary `} />
+
+                            )
+                        }
+                        
                     </div>
                     <div className='sub-section bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl rounded-xl'>
                     <Title tag={`3`} text={`search by continents`} />
