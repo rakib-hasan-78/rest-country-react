@@ -12,6 +12,9 @@ const Countries = () => {
     const [singleCountry , setSingleCountry] = useState(null);
     const [searchData, setSearchData] = useState('');
     const [filterData , setFilterData] =  useState([]);
+    const [searchCity, setSearchCity] = useState('');
+
+
 
     console.log(countries);
     useEffect(()=>{
@@ -44,7 +47,7 @@ const Countries = () => {
         const filterCountry = filterData.filter(country=>country.name.common.toLowerCase().includes(searchData.toLowerCase()));
         if (filterCountry) {
             setFilterData(filterCountry);
-            
+            setSearchCity('');
         } else {
             setFilterData([]);
         }
@@ -52,23 +55,37 @@ const Countries = () => {
 
     // 
 
+    const capitalCityHandler = (e) => {
+        e.preventDefault();
+        if (!searchCity) {
+            setFilterData(countries); // Reset to all countries if input is 
+            return;
+        }
+        const filtered = countries.filter(country => 
+            country.capital && country.capital.some(cap => cap.toLowerCase().includes(searchCity.toLowerCase()))
+        );
+        setFilterData(filtered);
+    }
+
     return (
         <>
-        <Sort country={filterData} />
+        <Sort  setCountry={setFilterData} countries={countries}  searchCity={searchCity} setSearchCity={setSearchCity} capitalCityHandler={capitalCityHandler}  />
         <Search searchData={searchData} setSearchData={setSearchData} cancelHandler={cancelHandler}  searchHandler={filterCountryHandler} />
         <section>
             <div className='bg-blue-800/30 rounded-md bg-opacity-40 inset-0 shadow-lg border border-white/30 w-10/12 flex items-center justify-center flex-wrap flex-col md:flex-row gap-8 py-10'>
-                {filterData && filterData.map((country, index)=>(
-                    <Country key={country.cca3} country={country} index={index} onTarget={()=>singleCountryHandler(country)} />
-                ))}
+
+            {filterData.length > 0 ? (
+                        filterData.map((country, index) => (
+                            <Country key={country.cca3} country={country} index={index} onTarget={() => singleCountryHandler(country)} />
+                        ))
+                    ) : (
+                        <Error searchCountry={searchData || searchCity} type={searchCity ? 'city' : 'country'} />
+                    )}
+
                 {singleCountry&&( <CountryMod country={singleCountry}
                 onClick={modalHandler}
                  /> )}
-                 {
-                    filterData.length===0 && (
-                        <Error searchCountry={searchData} type={`country`} />
-                    )
-                 }
+                 
             </div>
         </section>
 

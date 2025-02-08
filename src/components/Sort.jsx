@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import Title from './../utilities/Title';
 import Button from './../utilities/Button';
 
-const Sort = ({country}) => {
-    const [searchCity, setSearchCity] = useState('');
+const Sort = ({ setCountry, countries,  searchCity, setSearchCity, capitalCityHandler }) => {
+
+    
+
+    console.log(searchCity)
+    const capitalCancelHandler = () => {
+        setSearchCity('');
+        setCountry(countries);
+    }
+
+
 
     return (
         <section>
@@ -39,15 +48,24 @@ const Sort = ({country}) => {
                         {
                             searchCity && (
 
-                                <span className='absolute top-1/2 right-5 translate-y-[-50%] cursor-pointer text-black text-xs px-2'> <FontAwesomeIcon icon={faX}/> </span>
+                                <span 
+                                    className='absolute top-1/2 right-5 translate-y-[-50%] cursor-pointer text-black text-xs px-2'
+                                    onClick={capitalCancelHandler}
+                                    > 
+                                    <FontAwesomeIcon icon={faX}/> 
+                                </span>
                             )
 
                         }
                         </div>
                         {
                             searchCity && (
-                                
-                                <Button text={`search`} className={`w-10/12 btn btn-secondary `} />
+
+                                <Button 
+                                    text={`search`} 
+                                    className={`w-10/12 btn btn-secondary `}
+                                    onAction={capitalCityHandler}
+                                     />
 
                             )
                         }
