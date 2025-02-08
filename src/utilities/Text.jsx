@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Text = ({tag, text, className, onClick}) => {
-    const TAG = `${tag}`
+    const Tag = `${tag}`
     return (
-        <TAG className={`${className}`} onClick={onClick}>
+        <Tag className={`${className}`} onClick={onClick}>
             {text}
-        </TAG>
+        </Tag>
     );
 };
 

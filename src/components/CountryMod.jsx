@@ -48,7 +48,7 @@ const CountryMod = ({country, onClick}) => {
             </div>
             <div className='basic-modal-body xxm:flex-col-reverse lg:flex-row xxm:space-y-10 lg:space-x-10 lg:space-y-0'>
             {/* info section */}
-            <div className='w-8/12'>
+            <div className='xxm:w-full xxm:my-3 lg:my-0 lg:w-8/12'>
                 <div className='w-full flex items-center justify-start'>
                     <Title tag={3} text={`country : ${common}`} className={`text-white/70`} />
                 </div>
@@ -99,7 +99,7 @@ const CountryMod = ({country, onClick}) => {
                 </div>
             </div>
             {/* flag section */}
-            <div className='w-3/12'>
+            <div className='xxm:w-11/12 lg:w-3/12'>
                 <img src={svg} alt={alt} className='rounded-md shadow-xl shadow-zinc-800 inset-0' />
             </div>
             </div>

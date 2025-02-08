@@ -68,7 +68,7 @@
     }
     /* MODAL GLASS */
     .modal-glass{
-        @apply w-10/12 bg-gradient-to-r from-pink-600/30
+        @apply xxm:w-full lg:w-10/12 bg-gradient-to-r from-pink-600/30
         from-10% via-fuchsia-600/80 via-50%
          to-rose-800/45 to-90%
           backdrop-blur-sm 
