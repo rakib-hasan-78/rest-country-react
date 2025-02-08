@@ -13,6 +13,7 @@ const Countries = () => {
     const [searchData, setSearchData] = useState('');
     const [filterData , setFilterData] =  useState([]);
     const [searchCity, setSearchCity] = useState('');
+    const [independentCountry, setIndependentCountry] = useState('');
 
 
 
@@ -69,7 +70,7 @@ const Countries = () => {
 
     return (
         <>
-        <Sort  setCountry={setFilterData} countries={countries}  searchCity={searchCity} setSearchCity={setSearchCity} capitalCityHandler={capitalCityHandler}  />
+        <Sort country={filterData} setCountry={setFilterData} countries={countries}  searchCity={searchCity} setSearchCity={setSearchCity} capitalCityHandler={capitalCityHandler} independentCountry={independentCountry} setIndependentCountry={setIndependentCountry}   />
         <Search searchData={searchData} setSearchData={setSearchData} cancelHandler={cancelHandler}  searchHandler={filterCountryHandler} />
         <section>
             <div className='bg-blue-800/30 rounded-md bg-opacity-40 inset-0 shadow-lg border border-white/30 w-10/12 flex items-center justify-center flex-wrap flex-col md:flex-row gap-8 py-10'>
