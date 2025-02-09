@@ -4,12 +4,9 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 import Title from './../utilities/Title';
 import Button from './../utilities/Button';
 
-const Sort = ({country, setCountry, countries,  searchCity, setSearchCity,     capitalCityHandler, independentCountry, setIndependentCountry }) => {
+const Sort = ({ setCountry, countries,  searchCity, setSearchCity,     capitalCityHandler, independentCountry, setIndependentCountry }) => {
 
    
-
-
-    console.log(searchCity)
     const capitalCancelHandler = () => {
         setSearchCity('');
         setCountry(countries);
@@ -52,7 +49,7 @@ const Sort = ({country, setCountry, countries,  searchCity, setSearchCity,     c
                             <option value="asia">asia</option>
                             <option value="africa">africa</option>
                             <option value="europe">europe</option>
-                            <option value="	north america">	North America</option>
+                            <option value="north america">	North America</option>
                             <option value="south america">south America</option>
                             <option value="Oceania">Oceania</option>
                         </select>
