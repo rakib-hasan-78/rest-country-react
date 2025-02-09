@@ -4,17 +4,24 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 import Title from './../utilities/Title';
 import Button from './../utilities/Button';
 
-const Sort = ({ setCountry, countries,  searchCity, setSearchCity,     capitalCityHandler, independentCountry, setIndependentCountry }) => {
+const Sort = ({ setCountry, countries,  searchCity, setSearchCity,     capitalCityHandler, independentCountry, setIndependentCountry, setSearched }) => {
 
    
     const capitalCancelHandler = () => {
         setSearchCity('');
         setCountry(countries);
+        setSearched(false)
     }
 
     const continentHandler = () => {
+        if (!searchCity || searchCity === "#") {  
+            setCountry(countries);  // Reset to all countries if no continent is selected
+            setSearched(false);
+            return;
+        }
         const selectedContinent = countries.filter(country=> country.continents && country.continents.some(cont=> cont.toLowerCase().includes(searchCity.toLowerCase())));
         setCountry(selectedContinent);
+        setSearched(true)
     }
     const independentHandler = () => {
 
@@ -22,12 +29,15 @@ const Sort = ({ setCountry, countries,  searchCity, setSearchCity,     capitalCi
 
         if(isIndependent) {
             const independentCountries = countries.filter(country=> country.independent === true);
-
             setCountry(independentCountries);
+            setSearched(true)
         } else if (independentCountry === 'false') {
             const notIndependentCountries = countries.filter(country=> country.independent === false);
-
             setCountry(notIndependentCountries);
+            setSearched(true)
+        } else{
+            setCountry(countries);
+            setSearched(false);
         }
     }
 
