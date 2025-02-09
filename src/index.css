@@ -45,6 +45,14 @@
         @apply bg-gradient-to-r from-rose-700 via-pink-700 to-red-700/70;
     }
 
+    .btn-info-change{
+        @apply bg-gradient-to-r from-red-600 via-rose-700/70 to-pink-700 bg-blend-exclusion border-red-400 text-red-200;
+    }
+
+    .btn-info-change-hover{
+        @apply bg-gradient-to-r from-red-600/40 via-rose-800/70 to-pink-700/40 bg-blend-exclusion border-red-400/60 ;
+    }
+
     /* glass morphine section */
     .glass-section {
         @apply bg-gradient-to-r from-indigo-500 via-blue-500 to-sky-400 
@@ -99,7 +107,11 @@
     .btn-secondary{
         @apply btn-secondary-gradient border-red-400/20 shadow-md text-pink-100 hover:btn-secondary-gradient-hover;
     }
+    .btn-mark{
+        @apply btn-info-change hover:btn-info-change-hover;
+    }
     .input-primary{
         @apply py-2 outline-none rounded-md border-none px-2 shadow-lg capitalize inset-2 w-full placeholder:xl:text-lg placeholder:lg:text-base placeholder:md:text-base placeholder:sm:text-sm placeholder:xm:text-sm placeholder:xxm:text-xs;
     }
+
 }

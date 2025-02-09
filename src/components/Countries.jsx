@@ -4,6 +4,7 @@ import CountryMod from './CountryMod';
 import Search from './Search';
 import Error from './Error';
 import Sort from './Sort';
+import VisitedCountry from './VisitedCountry';
 
 
 const Countries = () => {
@@ -14,7 +15,7 @@ const Countries = () => {
     const [filterData , setFilterData] =  useState([]);
     const [searchCity, setSearchCity] = useState('');
     const [independentCountry, setIndependentCountry] = useState('');
-
+    const [visitedFlag, setVisitedFlag] = useState([]);
 
 
     console.log(countries);
@@ -71,13 +72,15 @@ const Countries = () => {
     return (
         <>
         <Sort country={filterData} setCountry={setFilterData} countries={countries}  searchCity={searchCity} setSearchCity={setSearchCity} capitalCityHandler={capitalCityHandler} independentCountry={independentCountry} setIndependentCountry={setIndependentCountry}   />
+
         <Search searchData={searchData} setSearchData={setSearchData} cancelHandler={cancelHandler}  searchHandler={filterCountryHandler} />
+        <VisitedCountry visitedFlag={visitedFlag} />
         <section>
             <div className='bg-blue-800/30 rounded-md bg-opacity-40 inset-0 shadow-lg border border-white/30 w-10/12 flex items-center justify-center flex-wrap flex-col md:flex-row gap-8 py-10'>
 
             {filterData.length > 0 ? (
                         filterData.map((country, index) => (
-                            <Country key={country.cca3} country={country} index={index} onTarget={() => singleCountryHandler(country)} />
+                            <Country key={country.cca3} country={country} index={index} onTarget={() => singleCountryHandler(country)}  visitedFlag={visitedFlag} setVisitedFlag={setVisitedFlag}/>
                         ))
                     ) : (
                         <Error searchCountry={searchData || searchCity} type={searchCity ? 'city' : 'country'} />
